@@ -2,6 +2,10 @@
   command = "npm run build"
   publish = "dist"
 
+# Enable reCAPTCHA spam filtering for forms
+[forms]
+  recaptcha2 = true
+
 # Custom 404 error pages per language
 # These only trigger when a page is not found (status 404)
 [[redirects]]
