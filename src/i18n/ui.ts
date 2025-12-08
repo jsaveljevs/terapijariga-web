@@ -17,14 +17,14 @@ export const ui = {
 
     // Footer
     'footer.privacy': 'Privātuma politika',
-    'footer.therapist': 'Kristīna Narmonte – Psihoterapeite Rīgā',
+    'footer.therapist': 'Kristīna Narmonte – Psihoterapijas speciāliste Rīgā',
     'footer.copyright': 'Visas tiesības aizsargātas.',
 
     // Home page
-    'home.title': 'Psihoterapeite Rīgā – Geštalta terapija ar Kristīnu',
-    'home.description': 'Psihoterapeite Rīgā. Palīdzība trauksmes, izdegšanas un attiecību grūtību gadījumos. Geštalta terapija klātienē un tiešsaistē. Latviešu, krievu un angļu valodā.',
-    'home.h1': 'Psihoterapeite Rīgā – atbalsts trauksmes, izdegšanas un attiecību grūtībās',
-    'home.intro': 'Es esmu Kristīna – sertificēta Geštalta psihoterapeite. Strādāju ar pieaugušajiem, kuri saskaras ar trauksmi, emocionālo izsīkumu, attiecību grūtībām vai bērnības pieredzes sekām.',
+    'home.title': 'Psihoterapijas speciāliste Rīgā – Geštalta terapija ar Kristīnu',
+    'home.description': 'Psihoterapijas speciāliste Rīgā. Palīdzība trauksmes, izdegšanas un attiecību grūtību gadījumos. Geštalta terapija klātienē un tiešsaistē. Latviešu, krievu un angļu valodā.',
+    'home.h1': 'Psihoterapijas speciāliste Rīgā – atbalsts trauksmes, izdegšanas un attiecību grūtībās',
+    'home.intro': 'Es esmu Kristīna – Geštalta psihoterapijas speciāliste. Strādāju ar pieaugušajiem, kuri saskaras ar trauksmi, emocionālo izsīkumu, attiecību grūtībām vai bērnības pieredzes sekām.',
     'home.intro2': 'Terapija ir droša vieta, kur var apstāties, ieklausīties sevī un sākt dzīvot atbilstošāk tam, kas jums patiešām ir svarīgs.',
     'home.cta.book': 'Pieteikties pirmajai sesijai',
     'home.cta.services': 'Kā terapija var palīdzēt',
@@ -60,10 +60,10 @@ export const ui = {
     'home.cta.phone': 'Telefons',
 
     // About page
-    'about.title': 'Par mani – Kristīna, psihoterapeite Rīgā',
-    'about.description': 'Uzziniet par Kristīnu – Geštalta psihoterapeiti Rīgā. Izglītība, pieredze un terapeitiskā pieeja.',
+    'about.title': 'Par mani – Kristīna, psihoterapijas speciāliste Rīgā',
+    'about.description': 'Uzziniet par Kristīnu – Geštalta psihoterapijas speciālisti Rīgā. Izglītība, pieredze un terapeitiskā pieeja.',
     'about.h1': 'Par mani',
-    'about.intro': 'Esmu Kristīna – Geštalta psihoterapeite ar praksi Rīgā. Strādāju ar pieaugušajiem, kuri saskaras ar trauksmi, izdegšanu, attiecību grūtībām un bērnības pieredzes sekām.',
+    'about.intro': 'Esmu Kristīna – Geštalta psihoterapijas speciāliste ar praksi Rīgā. Strādāju ar pieaugušajiem, kuri saskaras ar trauksmi, izdegšanu, attiecību grūtībām un bērnības pieredzes sekām.',
     'about.intro2': 'Mani interesē, kā cilvēki veido attiecības – ar sevi, citiem un pasauli. Terapijā es palīdzu ieraudzīt šos modeļus un, ja tie vairs nekalpo, atrast jaunus veidus, kā būt.',
 
     'about.education.title': 'Izglītība un apmācība',
@@ -84,7 +84,7 @@ export const ui = {
     'about.values.text': 'Terapijā man svarīga ir klātbūtne, zinātkāre un robežu cieņa. Es ticu, ka katrs cilvēks ir eksperts savā dzīvē, un mana loma ir būt blakus, nevis vadīt. Terapeitiskās attiecības ir sadarbība – droša telpa, kur var būt godīgs.',
 
     // Services page
-    'services.title': 'Terapijas pakalpojumi – psihoterapeite Rīgā',
+    'services.title': 'Terapijas pakalpojumi – psihoterapijas speciāliste Rīgā',
     'services.description': 'Individuālā psihoterapija pieaugušajiem Rīgā un tiešsaistē. Trauksme, izdegšana, attiecības, pašvērtējums, traumas sekas.',
     'services.h1': 'Terapijas pakalpojumi',
     'services.intro': 'Es piedāvāju individuālo psihoterapiju pieaugušajiem. Cilvēki nāk pie manis ar dažādiem jautājumiem – dažkārt ar skaidru problēmu, dažkārt ar neskaidru neapmierinātību vai vēlmi labāk izprast sevi.',
@@ -145,8 +145,8 @@ export const ui = {
     'faq.a10': 'Geštalta terapija ir virziens, kas fokusējas uz tagadni – uz to, ko jūtat un kā reaģējat šeit un tagad. Mēs strādājam ar visu cilvēku – domām, emocijām, ķermeni, attiecībām. Mērķis ir palielināt apzinātību un atrast jaunus veidus, kā būt.',
 
     // Contact page
-    'contact.title': 'Kontakti – psihoterapeite Rīgā',
-    'contact.description': 'Sazinieties ar Kristīnu – psihoterapeiti Rīgā. E-pasts, telefons, adrese. Pieteikties pirmajai sesijai.',
+    'contact.title': 'Kontakti – psihoterapijas speciāliste Rīgā',
+    'contact.description': 'Sazinieties ar Kristīnu – psihoterapijas speciālisti Rīgā. E-pasts, telefons, adrese. Pieteikties pirmajai sesijai.',
     'contact.h1': 'Kontakti un atrašanās vieta',
     'contact.intro': 'Ja vēlaties pieteikties sesijai vai uzdot jautājumus, rakstiet vai zvaniet. Pirmais kontakts ne pie kā neuzliek – varam vienkārši parunāt par to, vai terapija jums būtu piemērota.',
 
@@ -206,14 +206,14 @@ export const ui = {
 
     // Footer
     'footer.privacy': 'Политика конфиденциальности',
-    'footer.therapist': 'Кристина Нармонте – Психотерапевт в Риге',
+    'footer.therapist': 'Кристина Нармонте – Специалист по психотерапии в Риге',
     'footer.copyright': 'Все права защищены.',
 
     // Home page
-    'home.title': 'Психотерапевт в Риге – Гештальт-терапия с Кристиной',
-    'home.description': 'Психотерапевт в Риге. Помощь при тревоге, выгорании и проблемах в отношениях. Гештальт-терапия очно и онлайн. На латышском, русском и английском языках.',
-    'home.h1': 'Психотерапевт в Риге – поддержка при тревоге, выгорании и трудностях в отношениях',
-    'home.intro': 'Меня зовут Кристина – я сертифицированный гештальт-психотерапевт. Работаю со взрослыми, которые сталкиваются с тревогой, эмоциональным истощением, трудностями в отношениях или последствиями детского опыта.',
+    'home.title': 'Специалист по психотерапии в Риге – Гештальт-терапия с Кристиной',
+    'home.description': 'Специалист по психотерапии в Риге. Помощь при тревоге, выгорании и проблемах в отношениях. Гештальт-терапия очно и онлайн. На латышском, русском и английском языках.',
+    'home.h1': 'Специалист по психотерапии в Риге – поддержка при тревоге, выгорании и трудностях в отношениях',
+    'home.intro': 'Меня зовут Кристина – я специалист по гештальт-терапии. Работаю со взрослыми, которые сталкиваются с тревогой, эмоциональным истощением, трудностями в отношениях или последствиями детского опыта.',
     'home.intro2': 'Терапия – это безопасное пространство, где можно остановиться, прислушаться к себе и начать жить в большем соответствии с тем, что для вас по-настоящему важно.',
     'home.cta.book': 'Записаться на первую сессию',
     'home.cta.services': 'Как терапия может помочь',
@@ -249,10 +249,10 @@ export const ui = {
     'home.cta.phone': 'Телефон',
 
     // About page
-    'about.title': 'Обо мне – Кристина, психотерапевт в Риге',
-    'about.description': 'Узнайте о Кристине – гештальт-психотерапевте в Риге. Образование, опыт и терапевтический подход.',
+    'about.title': 'Обо мне – Кристина, специалист по психотерапии в Риге',
+    'about.description': 'Узнайте о Кристине – специалисте по гештальт-терапии в Риге. Образование, опыт и терапевтический подход.',
     'about.h1': 'Обо мне',
-    'about.intro': 'Меня зовут Кристина – я гештальт-психотерапевт с практикой в Риге. Работаю со взрослыми, которые сталкиваются с тревогой, выгоранием, трудностями в отношениях и последствиями детского опыта.',
+    'about.intro': 'Меня зовут Кристина – я специалист по гештальт-терапии с практикой в Риге. Работаю со взрослыми, которые сталкиваются с тревогой, выгоранием, трудностями в отношениях и последствиями детского опыта.',
     'about.intro2': 'Меня интересует, как люди строят отношения – с собой, другими и миром. В терапии я помогаю увидеть эти паттерны и, если они уже не служат, найти новые способы быть.',
 
     'about.education.title': 'Образование и подготовка',
@@ -273,7 +273,7 @@ export const ui = {
     'about.values.text': 'В терапии мне важны присутствие, любознательность и уважение к границам. Я верю, что каждый человек – эксперт в своей жизни, и моя роль – быть рядом, а не вести. Терапевтические отношения – это сотрудничество, безопасное пространство, где можно быть честным.',
 
     // Services page
-    'services.title': 'Услуги терапии – психотерапевт в Риге',
+    'services.title': 'Услуги терапии – специалист по психотерапии в Риге',
     'services.description': 'Индивидуальная психотерапия для взрослых в Риге и онлайн. Тревога, выгорание, отношения, самооценка, последствия травм.',
     'services.h1': 'Услуги терапии',
     'services.intro': 'Я предлагаю индивидуальную психотерапию для взрослых. Люди приходят ко мне с разными запросами – иногда с чёткой проблемой, иногда с неясной неудовлетворённостью или желанием лучше понять себя.',
@@ -334,8 +334,8 @@ export const ui = {
     'faq.a10': 'Гештальт-терапия – это направление, которое фокусируется на настоящем – на том, что вы чувствуете и как реагируете здесь и сейчас. Мы работаем с целым человеком – мыслями, эмоциями, телом, отношениями. Цель – увеличить осознанность и найти новые способы быть.',
 
     // Contact page
-    'contact.title': 'Контакты – психотерапевт в Риге',
-    'contact.description': 'Свяжитесь с Кристиной – психотерапевтом в Риге. E-mail, телефон, адрес. Записаться на первую сессию.',
+    'contact.title': 'Контакты – специалист по психотерапии в Риге',
+    'contact.description': 'Свяжитесь с Кристиной – специалистом по психотерапии в Риге. E-mail, телефон, адрес. Записаться на первую сессию.',
     'contact.h1': 'Контакты и как добраться',
     'contact.intro': 'Если вы хотите записаться на сессию или задать вопросы, напишите или позвоните. Первый контакт ни к чему не обязывает – мы можем просто поговорить о том, подходит ли вам терапия.',
 
@@ -395,14 +395,14 @@ export const ui = {
 
     // Footer
     'footer.privacy': 'Privacy Policy',
-    'footer.therapist': 'Kristina Narmonte – Psychotherapist in Riga',
+    'footer.therapist': 'Kristina Narmonte – Psychotherapy specialist in Riga',
     'footer.copyright': 'All rights reserved.',
 
     // Home page
-    'home.title': 'Psychotherapist in Riga – Gestalt therapy with Kristina',
-    'home.description': 'Psychotherapist in Riga. Help with anxiety, burnout and relationship difficulties. Gestalt therapy in-person and online. In Latvian, Russian and English.',
-    'home.h1': 'Psychotherapist in Riga – support for anxiety, burnout and relationships',
-    'home.intro': 'I\'m Kristina – a certified Gestalt psychotherapist. I work with adults who are dealing with anxiety, emotional exhaustion, relationship difficulties or consequences of childhood experiences.',
+    'home.title': 'Psychotherapy specialist in Riga – Gestalt therapy with Kristina',
+    'home.description': 'Psychotherapy specialist in Riga. Help with anxiety, burnout and relationship difficulties. Gestalt therapy in-person and online. In Latvian, Russian and English.',
+    'home.h1': 'Psychotherapy specialist in Riga – support for anxiety, burnout and relationships',
+    'home.intro': 'I\'m Kristina – a Gestalt psychotherapy specialist. I work with adults who are dealing with anxiety, emotional exhaustion, relationship difficulties or consequences of childhood experiences.',
     'home.intro2': 'Therapy is a safe space where you can pause, listen to yourself and start living more in line with what truly matters to you.',
     'home.cta.book': 'Book a first session',
     'home.cta.services': 'How therapy can help',
@@ -438,10 +438,10 @@ export const ui = {
     'home.cta.phone': 'Phone',
 
     // About page
-    'about.title': 'About me – Kristina, psychotherapist in Riga',
-    'about.description': 'Learn about Kristina – a Gestalt psychotherapist in Riga. Education, experience and therapeutic approach.',
+    'about.title': 'About me – Kristina, psychotherapy specialist in Riga',
+    'about.description': 'Learn about Kristina – a Gestalt psychotherapy specialist in Riga. Education, experience and therapeutic approach.',
     'about.h1': 'About me',
-    'about.intro': 'I\'m Kristina – a Gestalt psychotherapist with a practice in Riga. I work with adults who are dealing with anxiety, burnout, relationship difficulties and consequences of childhood experiences.',
+    'about.intro': 'I\'m Kristina – a Gestalt psychotherapy specialist with a practice in Riga. I work with adults who are dealing with anxiety, burnout, relationship difficulties and consequences of childhood experiences.',
     'about.intro2': 'I\'m interested in how people build relationships – with themselves, others and the world. In therapy, I help you see these patterns and, if they no longer serve you, find new ways of being.',
 
     'about.education.title': 'Education and training',
@@ -462,7 +462,7 @@ export const ui = {
     'about.values.text': 'In therapy, I value presence, curiosity and respect for boundaries. I believe that each person is an expert in their own life, and my role is to be alongside, not to lead. The therapeutic relationship is a collaboration – a safe space where you can be honest.',
 
     // Services page
-    'services.title': 'Therapy services – psychotherapist in Riga',
+    'services.title': 'Therapy services – psychotherapy specialist in Riga',
     'services.description': 'Individual psychotherapy for adults in Riga and online. Anxiety, burnout, relationships, self-worth, trauma consequences.',
     'services.h1': 'Therapy services',
     'services.intro': 'I offer individual psychotherapy for adults. People come to me with various concerns – sometimes with a clear problem, sometimes with vague dissatisfaction or a desire to understand themselves better.',
@@ -523,8 +523,8 @@ export const ui = {
     'faq.a10': 'Gestalt therapy is an approach that focuses on the present – on what you feel and how you react here and now. We work with the whole person – thoughts, emotions, body, relationships. The goal is to increase awareness and find new ways of being.',
 
     // Contact page
-    'contact.title': 'Contact – psychotherapist in Riga',
-    'contact.description': 'Get in touch with Kristina – psychotherapist in Riga. Email, phone, address. Book a first session.',
+    'contact.title': 'Contact – psychotherapy specialist in Riga',
+    'contact.description': 'Get in touch with Kristina – psychotherapy specialist in Riga. Email, phone, address. Book a first session.',
     'contact.h1': 'Contact and directions',
     'contact.intro': 'If you want to book a session or ask questions, write or call. The first contact doesn\'t commit you to anything – we can simply talk about whether therapy might be right for you.',
 
