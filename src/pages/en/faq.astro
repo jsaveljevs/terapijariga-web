@@ -1,8 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { useTranslations } from '../../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../../i18n/ui';
 
-const lang = 'en';
+const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const faqItems = [
@@ -24,46 +24,74 @@ const faqSchema = {
   "mainEntity": faqItems.map(item => ({
     "@type": "Question",
     "name": item.q,
-    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
   }))
 };
 
 function getLocalizedUrl(locale: string, route: string): string {
-  if (locale === 'lv') return route === '/' ? '/' : route;
+  if (locale === 'lv') {
+    return route === '/' ? '/' : route;
+  }
   return route === '/' ? `/${locale}` : `/${locale}${route}`;
 }
 ---
 
-<Layout title={t('faq.title')} description={t('faq.description')} structuredData={faqSchema}>
-  <article class="py-16 sm:py-20">
+<Layout
+  title={t('faq.title')}
+  description={t('faq.description')}
+  structuredData={faqSchema}
+>
+  <article class="py-16 sm:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <header class="mb-12">
-        <h1 class="text-3xl sm:text-4xl font-serif font-bold text-gray-900 mb-6">{t('faq.h1')}</h1>
-        <p class="text-lg text-gray-600">{t('faq.intro')}</p>
+      <!-- Header -->
+      <header class="mb-12 text-center">
+        <h1 class="text-4xl sm:text-5xl font-display font-bold text-neutral-900 mb-6">
+          {t('faq.h1')}
+        </h1>
+        <p class="text-lg text-neutral-600">
+          {t('faq.intro')}
+        </p>
       </header>
 
-      <div class="space-y-6">
-        {faqItems.map((item) => (
-          <details class="group bg-white rounded-xl border border-warm-200 overflow-hidden">
-            <summary class="flex items-center justify-between cursor-pointer p-6 hover:bg-warm-50 transition-colors">
-              <h2 class="text-lg font-semibold text-gray-900 pr-4">{item.q}</h2>
-              <span class="flex-shrink-0 w-6 h-6 text-primary-600 group-open:rotate-180 transition-transform">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- FAQ Items -->
+      <div class="space-y-4">
+        {faqItems.map((item, index) => (
+          <details class="group bg-white rounded-2xl border border-neutral-100 shadow-sm overflow-hidden">
+            <summary class="flex items-center justify-between cursor-pointer p-6 hover:bg-neutral-50 transition-colors">
+              <h2 class="text-lg font-semibold text-neutral-900 pr-4 text-left">
+                {item.q}
+              </h2>
+              <span class="flex-shrink-0 w-8 h-8 bg-neutral-100 rounded-full flex items-center justify-center group-open:bg-primary-100 transition-colors">
+                <svg class="w-5 h-5 text-neutral-500 group-open:text-primary-600 group-open:rotate-180 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </span>
             </summary>
             <div class="px-6 pb-6 pt-0">
-              <p class="text-gray-600 leading-relaxed">{item.a}</p>
+              <p class="text-neutral-600 leading-relaxed">
+                {item.a}
+              </p>
             </div>
           </details>
         ))}
       </div>
 
-      <div class="mt-12 p-6 bg-primary-50 rounded-xl border border-primary-200 text-center">
-        <p class="text-gray-700 mb-4">Have other questions?</p>
-        <a href={getLocalizedUrl(lang, '/contact')} class="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors">
+      <!-- CTA -->
+      <div class="mt-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-3xl p-8 sm:p-10 text-center">
+        <p class="text-white text-lg mb-6">
+          {lang === 'lv' ? 'Vai jums ir citi jautājumi?' : lang === 'ru' ? 'Есть другие вопросы?' : 'Have other questions?'}
+        </p>
+        <a
+          href={getLocalizedUrl(lang, '/contact')}
+          class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-2xl hover:bg-neutral-50 transition-all shadow-lg"
+        >
           {t('nav.contact')}
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
         </a>
       </div>
     </div>

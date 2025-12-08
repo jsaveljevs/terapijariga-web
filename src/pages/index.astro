@@ -44,21 +44,9 @@ const structuredData = {
     }
   ],
   "availableLanguage": [
-    {
-      "@type": "Language",
-      "name": "Latvian",
-      "alternateName": "lv"
-    },
-    {
-      "@type": "Language",
-      "name": "Russian",
-      "alternateName": "ru"
-    },
-    {
-      "@type": "Language",
-      "name": "English",
-      "alternateName": "en"
-    }
+    { "@type": "Language", "name": "Latvian", "alternateName": "lv" },
+    { "@type": "Language", "name": "Russian", "alternateName": "ru" },
+    { "@type": "Language", "name": "English", "alternateName": "en" }
   ],
   "medicalSpecialty": "Psychiatric",
   "hasOfferCatalog": {
@@ -93,43 +81,57 @@ const structuredData = {
   structuredData={structuredData}
 >
   <!-- Hero Section -->
-  <section class="bg-gradient-to-b from-white to-warm-100 py-16 sm:py-24">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+  <section class="relative overflow-hidden">
+    <!-- Background gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-50"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-primary-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent-200/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="order-2 lg:order-1">
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-gray-900 leading-tight mb-6">
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-6">
+            <span class="w-2 h-2 bg-primary-500 rounded-full mr-2"></span>
+            Gestalt Psychotherapy
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-neutral-900 leading-tight mb-6">
             {t('home.h1')}
           </h1>
-          <p class="text-lg text-gray-600 mb-4">
+          <p class="text-lg text-neutral-600 mb-4 leading-relaxed">
             {t('home.intro')}
           </p>
-          <p class="text-lg text-gray-600 mb-8">
+          <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
             {t('home.intro2')}
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a
               href={getLocalizedUrl(lang, '/contact')}
-              class="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors shadow-sm"
+              class="inline-flex items-center justify-center px-8 py-4 bg-neutral-900 text-white font-medium rounded-2xl hover:bg-neutral-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               {t('home.cta.book')}
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </a>
             <a
               href={getLocalizedUrl(lang, '/services')}
-              class="inline-flex items-center justify-center px-6 py-3 bg-white text-primary-700 font-medium rounded-lg border border-primary-200 hover:bg-primary-50 transition-colors"
+              class="inline-flex items-center justify-center px-8 py-4 bg-white text-neutral-700 font-medium rounded-2xl border border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50 transition-all"
             >
               {t('home.cta.services')}
             </a>
           </div>
         </div>
         <div class="order-1 lg:order-2 flex justify-center">
-          <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-            <div class="absolute inset-0 bg-primary-200 rounded-full opacity-20"></div>
-            <img
-              src="/images/portrait.jpg"
-              alt="Kristīna – Gestalt psychotherapist in Riga"
-              class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-lg"
-              onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22><rect fill=%22%23e8e0d6%22 width=%22400%22 height=%22400%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%238d7259%22 font-size=%2224%22>Photo</text></svg>'"
-            />
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-400 to-accent-400 rounded-3xl rotate-6 opacity-20"></div>
+            <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+              <img
+                src="/images/portrait.jpg"
+                alt="Kristīna – Gestalt psychotherapist in Riga"
+                class="w-full h-full object-cover rounded-3xl shadow-2xl"
+                onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22><rect fill=%22%23e5e5e5%22 width=%22400%22 height=%22400%22 rx=%2224%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23737373%22 font-size=%2220%22 font-family=%22system-ui%22>Photo</text></svg>'"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -137,25 +139,30 @@ const structuredData = {
   </section>
 
   <!-- What I Help With -->
-  <section class="py-16 sm:py-20 bg-white">
+  <section class="py-20 sm:py-28 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl font-serif font-bold text-gray-900 text-center mb-12">
-        {t('home.help.title')}
-      </h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-neutral-900 mb-4">
+          {t('home.help.title')}
+        </h2>
+        <p class="text-neutral-500 max-w-2xl mx-auto">
+          {lang === 'lv' ? 'Strādāju ar dažādām tēmām un grūtībām' : lang === 'ru' ? 'Работаю с разными темами и трудностями' : 'I work with various topics and difficulties'}
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
-          { key: 'anxiety', icon: '🌊' },
-          { key: 'burnout', icon: '🔥' },
-          { key: 'relationships', icon: '💔' },
-          { key: 'selfworth', icon: '🪞' },
-          { key: 'trauma', icon: '🌱' },
-          { key: 'psychosomatic', icon: '🧠' },
-          { key: 'transitions', icon: '🔄' },
-          { key: 'loneliness', icon: '🤝' },
-        ].map(({ key, icon }) => (
-          <div class="p-5 bg-warm-50 rounded-xl border border-warm-200 hover:border-primary-300 transition-colors">
-            <div class="text-2xl mb-3" aria-hidden="true">{icon}</div>
-            <p class="text-gray-700 font-medium">{t(`home.help.${key}` as any)}</p>
+          { key: 'anxiety', gradient: 'from-blue-500 to-cyan-500' },
+          { key: 'burnout', gradient: 'from-orange-500 to-amber-500' },
+          { key: 'relationships', gradient: 'from-pink-500 to-rose-500' },
+          { key: 'selfworth', gradient: 'from-violet-500 to-purple-500' },
+          { key: 'trauma', gradient: 'from-emerald-500 to-teal-500' },
+          { key: 'psychosomatic', gradient: 'from-indigo-500 to-blue-500' },
+          { key: 'transitions', gradient: 'from-amber-500 to-yellow-500' },
+          { key: 'loneliness', gradient: 'from-teal-500 to-cyan-500' },
+        ].map(({ key, gradient }) => (
+          <div class="group p-6 bg-neutral-50 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 cursor-default">
+            <div class={`w-10 h-10 bg-gradient-to-br ${gradient} rounded-xl mb-4 opacity-80 group-hover:opacity-100 transition-opacity`}></div>
+            <p class="text-neutral-700 font-medium leading-snug">{t(`home.help.${key}` as any)}</p>
           </div>
         ))}
       </div>
@@ -163,28 +170,30 @@ const structuredData = {
   </section>
 
   <!-- How Therapy Works -->
-  <section class="py-16 sm:py-20 bg-warm-50">
+  <section class="py-20 sm:py-28 bg-neutral-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl font-serif font-bold text-gray-900 text-center mb-12">
-        {t('home.process.title')}
-      </h2>
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-neutral-900 mb-4">
+          {t('home.process.title')}
+        </h2>
+      </div>
       <div class="grid md:grid-cols-3 gap-8">
         {[1, 2, 3].map((step) => (
           <div class="relative">
-            <div class="flex items-center mb-4">
-              <div class="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+            <div class="bg-white rounded-3xl p-8 h-full shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-14 h-14 bg-gradient-to-br from-primary-400 to-primary-600 text-white rounded-2xl flex items-center justify-center font-bold text-xl mb-6">
                 {step}
               </div>
-              {step < 3 && (
-                <div class="hidden md:block flex-1 h-0.5 bg-primary-200 ml-4"></div>
-              )}
+              <h3 class="text-xl font-display font-semibold text-neutral-900 mb-3">
+                {t(`home.process.step${step}.title` as any)}
+              </h3>
+              <p class="text-neutral-600 leading-relaxed">
+                {t(`home.process.step${step}.text` as any)}
+              </p>
             </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {t(`home.process.step${step}.title` as any)}
-            </h3>
-            <p class="text-gray-600">
-              {t(`home.process.step${step}.text` as any)}
-            </p>
+            {step < 3 && (
+              <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-neutral-200"></div>
+            )}
           </div>
         ))}
       </div>
@@ -192,54 +201,57 @@ const structuredData = {
   </section>
 
   <!-- Languages -->
-  <section class="py-16 sm:py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-2xl sm:text-3xl font-serif font-bold text-gray-900 mb-6">
-        {t('home.languages.title')}
-      </h2>
-      <p class="text-lg text-gray-600 mb-8">
-        {t('home.languages.text')}
-      </p>
-      <div class="flex justify-center gap-4 flex-wrap">
-        <span class="px-4 py-2 bg-warm-100 text-gray-700 rounded-full font-medium">Latviešu</span>
-        <span class="px-4 py-2 bg-warm-100 text-gray-700 rounded-full font-medium">Русский</span>
-        <span class="px-4 py-2 bg-warm-100 text-gray-700 rounded-full font-medium">English</span>
+  <section class="py-20 sm:py-28 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-3xl p-10 sm:p-14 text-center">
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mb-4">
+          {t('home.languages.title')}
+        </h2>
+        <p class="text-neutral-300 mb-8 max-w-xl mx-auto leading-relaxed">
+          {t('home.languages.text')}
+        </p>
+        <div class="flex justify-center gap-3 flex-wrap">
+          <span class="px-5 py-2.5 bg-white/10 text-white rounded-full font-medium backdrop-blur-sm">Latviešu</span>
+          <span class="px-5 py-2.5 bg-white/10 text-white rounded-full font-medium backdrop-blur-sm">Русский</span>
+          <span class="px-5 py-2.5 bg-white/10 text-white rounded-full font-medium backdrop-blur-sm">English</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-16 sm:py-20 bg-primary-700">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mb-6">
+  <section class="py-20 sm:py-28 bg-gradient-to-br from-primary-500 to-primary-600 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-4">
         {t('home.cta.title')}
       </h2>
-      <p class="text-lg text-primary-100 mb-8">
+      <p class="text-lg text-primary-100 mb-10 max-w-xl mx-auto">
         {t('home.cta.text')}
       </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-6 text-white">
-        <div>
+      <div class="flex flex-col sm:flex-row justify-center gap-6 mb-10">
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4">
           <p class="text-primary-200 text-sm mb-1">{t('home.cta.email')}</p>
-          <a href="mailto:you@terapijariga.lv" class="text-lg font-medium hover:underline">
+          <a href="mailto:you@terapijariga.lv" class="text-white font-medium hover:underline">
             you@terapijariga.lv
           </a>
         </div>
-        <div class="hidden sm:block w-px bg-primary-500"></div>
-        <div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4">
           <p class="text-primary-200 text-sm mb-1">{t('home.cta.phone')}</p>
-          <a href="tel:+371XXXXXXXX" class="text-lg font-medium hover:underline">
+          <a href="tel:+371XXXXXXXX" class="text-white font-medium hover:underline">
             +371 XX XXX XXX
           </a>
         </div>
       </div>
-      <div class="mt-8">
-        <a
-          href={getLocalizedUrl(lang, '/contact')}
-          class="inline-flex items-center justify-center px-8 py-3 bg-white text-primary-700 font-medium rounded-lg hover:bg-warm-50 transition-colors shadow-sm"
-        >
-          {t('home.cta.book')}
-        </a>
-      </div>
+      <a
+        href={getLocalizedUrl(lang, '/contact')}
+        class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-2xl hover:bg-neutral-50 transition-all shadow-lg hover:shadow-xl"
+      >
+        {t('home.cta.book')}
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
     </div>
   </section>
 </Layout>

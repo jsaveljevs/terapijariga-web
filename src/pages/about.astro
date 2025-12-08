@@ -17,27 +17,27 @@ function getLocalizedUrl(locale: string, route: string): string {
   title={t('about.title')}
   description={t('about.description')}
 >
-  <article class="py-16 sm:py-20">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+  <article class="py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Header -->
-      <header class="mb-12">
-        <h1 class="text-3xl sm:text-4xl font-serif font-bold text-gray-900 mb-6">
-          {t('about.h1')}
-        </h1>
-        <div class="flex items-start gap-6 flex-col sm:flex-row">
-          <div class="w-32 h-32 flex-shrink-0">
+      <header class="mb-16">
+        <div class="flex flex-col md:flex-row items-start gap-8">
+          <div class="w-40 h-40 flex-shrink-0">
             <img
               src="/images/portrait.jpg"
               alt="Kristīna"
-              class="w-full h-full object-cover rounded-full border-2 border-warm-200"
-              onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><rect fill=%22%23e8e0d6%22 width=%22128%22 height=%22128%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%238d7259%22 font-size=%2214%22>Photo</text></svg>'"
+              class="w-full h-full object-cover rounded-3xl shadow-lg"
+              onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 160 160%22><rect fill=%22%23e5e5e5%22 width=%22160%22 height=%22160%22 rx=%2224%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23737373%22 font-size=%2214%22 font-family=%22system-ui%22>Photo</text></svg>'"
             />
           </div>
           <div>
-            <p class="text-lg text-gray-600 mb-4">
+            <h1 class="text-4xl sm:text-5xl font-display font-bold text-neutral-900 mb-6">
+              {t('about.h1')}
+            </h1>
+            <p class="text-lg text-neutral-600 mb-4 leading-relaxed">
               {t('about.intro')}
             </p>
-            <p class="text-gray-600">
+            <p class="text-neutral-600 leading-relaxed">
               {t('about.intro2')}
             </p>
           </div>
@@ -46,75 +46,77 @@ function getLocalizedUrl(locale: string, route: string): string {
 
       <!-- Education -->
       <section class="mb-12">
-        <h2 class="text-2xl font-serif font-bold text-gray-900 mb-4">
-          {t('about.education.title')}
-        </h2>
-        <p class="text-gray-600 mb-4">
-          {t('about.education.text')}
-        </p>
-        <ul class="space-y-2">
-          <li class="flex items-start gap-3">
-            <span class="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></span>
-            <span class="text-gray-700">{t('about.education.list1')}</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></span>
-            <span class="text-gray-700">{t('about.education.list2')}</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></span>
-            <span class="text-gray-700">{t('about.education.list3')}</span>
-          </li>
-        </ul>
+        <div class="bg-gradient-to-br from-primary-50 to-white rounded-3xl p-8 sm:p-10">
+          <h2 class="text-2xl font-display font-bold text-neutral-900 mb-4">
+            {t('about.education.title')}
+          </h2>
+          <p class="text-neutral-600 mb-6 leading-relaxed">
+            {t('about.education.text')}
+          </p>
+          <ul class="space-y-3">
+            {[t('about.education.list1'), t('about.education.list2'), t('about.education.list3')].map((item) => (
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-primary-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-neutral-700">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <!-- Approach -->
       <section class="mb-12">
-        <h2 class="text-2xl font-serif font-bold text-gray-900 mb-4">
+        <h2 class="text-2xl font-display font-bold text-neutral-900 mb-4">
           {t('about.approach.title')}
         </h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-neutral-600 mb-4 leading-relaxed">
           {t('about.approach.text1')}
         </p>
-        <p class="text-gray-600">
+        <p class="text-neutral-600 leading-relaxed">
           {t('about.approach.text2')}
         </p>
       </section>
 
       <!-- Sessions -->
       <section class="mb-12">
-        <h2 class="text-2xl font-serif font-bold text-gray-900 mb-4">
+        <h2 class="text-2xl font-display font-bold text-neutral-900 mb-4">
           {t('about.sessions.title')}
         </h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-neutral-600 mb-4 leading-relaxed">
           {t('about.sessions.text1')}
         </p>
-        <p class="text-gray-600">
+        <p class="text-neutral-600 leading-relaxed">
           {t('about.sessions.text2')}
         </p>
       </section>
 
       <!-- Values -->
-      <section class="mb-12 p-6 bg-warm-50 rounded-xl border border-warm-200">
-        <h2 class="text-2xl font-serif font-bold text-gray-900 mb-4">
-          {t('about.values.title')}
-        </h2>
-        <p class="text-gray-600">
-          {t('about.values.text')}
-        </p>
+      <section class="mb-12">
+        <div class="bg-neutral-900 rounded-3xl p-8 sm:p-10">
+          <h2 class="text-2xl font-display font-bold text-white mb-4">
+            {t('about.values.title')}
+          </h2>
+          <p class="text-neutral-300 leading-relaxed">
+            {t('about.values.text')}
+          </p>
+        </div>
       </section>
 
       <!-- CTA -->
       <div class="flex flex-col sm:flex-row gap-4">
         <a
           href={getLocalizedUrl(lang, '/services')}
-          class="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors"
+          class="inline-flex items-center justify-center px-8 py-4 bg-neutral-900 text-white font-medium rounded-2xl hover:bg-neutral-800 transition-all"
         >
           {t('home.cta.services')}
         </a>
         <a
           href={getLocalizedUrl(lang, '/contact')}
-          class="inline-flex items-center justify-center px-6 py-3 bg-white text-primary-700 font-medium rounded-lg border border-primary-200 hover:bg-primary-50 transition-colors"
+          class="inline-flex items-center justify-center px-8 py-4 bg-white text-neutral-700 font-medium rounded-2xl border border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50 transition-all"
         >
           {t('home.cta.book')}
         </a>
