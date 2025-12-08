@@ -67,7 +67,10 @@ function getLocalizedUrl(locale: string, route: string): string {
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   {structuredData && (
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
@@ -80,9 +83,7 @@ function getLocalizedUrl(locale: string, route: string): string {
       <div class="flex justify-between items-center h-16">
         <!-- Logo / Brand -->
         <a href={getLocalizedUrl(lang, '/')} class="flex items-center space-x-2 group">
-          <div class="w-8 h-8 bg-gradient-to-br from-primary-400 to-primary-600 rounded-lg flex items-center justify-center">
-            <span class="text-white font-bold text-sm">T</span>
-          </div>
+          <img src="/images/logo.png" alt="TerapijaRiga" class="w-8 h-8" />
           <span class="text-lg font-semibold text-neutral-800 group-hover:text-primary-600 transition-colors">TerapijaRiga</span>
         </a>
 
@@ -185,9 +186,7 @@ function getLocalizedUrl(locale: string, route: string): string {
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
         <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center">
-            <span class="text-white font-bold">T</span>
-          </div>
+          <img src="/images/logo.png" alt="TerapijaRiga" class="w-10 h-10" />
           <div>
             <p class="text-white font-medium">TerapijaRiga</p>
             <p class="text-sm text-neutral-500">{t('footer.therapist')}</p>

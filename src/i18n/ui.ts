@@ -17,7 +17,7 @@ export const ui = {
 
     // Footer
     'footer.privacy': 'Privātuma politika',
-    'footer.therapist': 'Kristīna – Psihoterapeite Rīgā',
+    'footer.therapist': 'Kristīna Narmonte – Psihoterapeite Rīgā',
     'footer.copyright': 'Visas tiesības aizsargātas.',
 
     // Home page
@@ -206,7 +206,7 @@ export const ui = {
 
     // Footer
     'footer.privacy': 'Политика конфиденциальности',
-    'footer.therapist': 'Кристина – Психотерапевт в Риге',
+    'footer.therapist': 'Кристина Нармонте – Психотерапевт в Риге',
     'footer.copyright': 'Все права защищены.',
 
     // Home page
@@ -395,7 +395,7 @@ export const ui = {
 
     // Footer
     'footer.privacy': 'Privacy Policy',
-    'footer.therapist': 'Kristina – Psychotherapist in Riga',
+    'footer.therapist': 'Kristina Narmonte – Psychotherapist in Riga',
     'footer.copyright': 'All rights reserved.',
 
     // Home page
