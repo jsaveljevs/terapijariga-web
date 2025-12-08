@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/ui';
+
+const lang = 'ru';
+const t = useTranslations(lang);
+
+function getLocalizedUrl(locale: string, route: string): string {
+  if (locale === 'lv') {
+    return route === '/' ? '/' : route;
+  }
+  return route === '/' ? `/${locale}` : `/${locale}${route}`;
+}
+---
+
+<Layout
+  title={t('about.title')}
+  description={t('about.description')}
+>
+  <article class="py-16 sm:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="mb-12">
+        <h1 class="text-3xl sm:text-4xl font-serif font-bold text-gray-900 mb-6">
+          {t('about.h1')}
+        </h1>
+        <div class="flex items-start gap-6 flex-col sm:flex-row">
+          <div class="w-32 h-32 flex-shrink-0">
+            <img
+              src="/images/portrait.jpg"
+              alt="Кристина"
+              class="w-full h-full object-cover rounded-full border-2 border-warm-200"
+              onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><rect fill=%22%23e8e0d6%22 width=%22128%22 height=%22128%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%238d7259%22 font-size=%2214%22>Photo</text></svg>'"
+            />
+          </div>
+          <div>
+            <p class="text-lg text-gray-600 mb-4">{t('about.intro')}</p>
+            <p class="text-gray-600">{t('about.intro2')}</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mb-4">{t('about.education.title')}</h2>
+        <p class="text-gray-600 mb-4">{t('about.education.text')}</p>
+        <ul class="space-y-2">
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></span>
+            <span class="text-gray-700">{t('about.education.list1')}</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></span>
+            <span class="text-gray-700">{t('about.education.list2')}</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></span>
+            <span class="text-gray-700">{t('about.education.list3')}</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mb-4">{t('about.approach.title')}</h2>
+        <p class="text-gray-600 mb-4">{t('about.approach.text1')}</p>
+        <p class="text-gray-600">{t('about.approach.text2')}</p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mb-4">{t('about.sessions.title')}</h2>
+        <p class="text-gray-600 mb-4">{t('about.sessions.text1')}</p>
+        <p class="text-gray-600">{t('about.sessions.text2')}</p>
+      </section>
+
+      <section class="mb-12 p-6 bg-warm-50 rounded-xl border border-warm-200">
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mb-4">{t('about.values.title')}</h2>
+        <p class="text-gray-600">{t('about.values.text')}</p>
+      </section>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href={getLocalizedUrl(lang, '/services')} class="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors">
+          {t('home.cta.services')}
+        </a>
+        <a href={getLocalizedUrl(lang, '/contact')} class="inline-flex items-center justify-center px-6 py-3 bg-white text-primary-700 font-medium rounded-lg border border-primary-200 hover:bg-primary-50 transition-colors">
+          {t('home.cta.book')}
+        </a>
+      </div>
+    </div>
+  </article>
+</Layout>

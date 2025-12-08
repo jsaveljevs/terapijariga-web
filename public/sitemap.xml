@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Latvian (default) -->
+  <url>
+    <loc>https://terapijariga.lv/</loc>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://terapijariga.lv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://terapijariga.lv/ru"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://terapijariga.lv/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://terapijariga.lv/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://terapijariga.lv/about</loc>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://terapijariga.lv/about"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://terapijariga.lv/ru/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://terapijariga.lv/en/about"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://terapijariga.lv/services</loc>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://terapijariga.lv/services"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://terapijariga.lv/ru/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://terapijariga.lv/en/services"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://terapijariga.lv/faq</loc>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://terapijariga.lv/faq"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://terapijariga.lv/ru/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://terapijariga.lv/en/faq"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://terapijariga.lv/contact</loc>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://terapijariga.lv/contact"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://terapijariga.lv/ru/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://terapijariga.lv/en/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://terapijariga.lv/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://terapijariga.lv/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://terapijariga.lv/ru/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://terapijariga.lv/en/privacy"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Russian -->
+  <url>
+    <loc>https://terapijariga.lv/ru</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://terapijariga.lv/ru/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://terapijariga.lv/ru/services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://terapijariga.lv/ru/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://terapijariga.lv/ru/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://terapijariga.lv/ru/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- English -->
+  <url>
+    <loc>https://terapijariga.lv/en</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://terapijariga.lv/en/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://terapijariga.lv/en/services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://terapijariga.lv/en/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://terapijariga.lv/en/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://terapijariga.lv/en/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,209 @@
+---
+import { languages, getLangFromUrl, useTranslations, getRouteFromUrl } from '../i18n/ui';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  structuredData?: object;
+}
+
+const { title, description, canonicalUrl, ogImage = '/images/og-default.jpg', structuredData } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const currentRoute = getRouteFromUrl(Astro.url);
+
+const siteUrl = 'https://terapijariga.lv';
+const fullCanonicalUrl = canonicalUrl || Astro.url.href;
+
+function getLocalizedUrl(locale: string, route: string): string {
+  if (locale === 'lv') {
+    return route === '/' ? '/' : route;
+  }
+  return route === '/' ? `/${locale}` : `/${locale}${route}`;
+}
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+
+  <title>{title}</title>
+
+  <!-- Canonical and hreflang -->
+  <link rel="canonical" href={fullCanonicalUrl} />
+  {Object.keys(languages).map((locale) => (
+    <link
+      rel="alternate"
+      hreflang={locale}
+      href={`${siteUrl}${getLocalizedUrl(locale, currentRoute)}`}
+    />
+  ))}
+  <link rel="alternate" hreflang="x-default" href={`${siteUrl}${currentRoute}`} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={fullCanonicalUrl} />
+  <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content={lang === 'lv' ? 'lv_LV' : lang === 'ru' ? 'ru_RU' : 'en_US'} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  {structuredData && (
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  )}
+</head>
+<body class="min-h-screen flex flex-col bg-warm-50 text-gray-800 font-sans antialiased">
+  <!-- Header -->
+  <header class="bg-white border-b border-warm-200 sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo / Brand -->
+        <a href={getLocalizedUrl(lang, '/')} class="flex items-center space-x-2">
+          <span class="text-lg sm:text-xl font-semibold text-primary-700">TerapijaRiga.lv</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a href={getLocalizedUrl(lang, '/')} class="text-gray-600 hover:text-primary-600 transition-colors">
+            {t('nav.home')}
+          </a>
+          <a href={getLocalizedUrl(lang, '/about')} class="text-gray-600 hover:text-primary-600 transition-colors">
+            {t('nav.about')}
+          </a>
+          <a href={getLocalizedUrl(lang, '/services')} class="text-gray-600 hover:text-primary-600 transition-colors">
+            {t('nav.services')}
+          </a>
+          <a href={getLocalizedUrl(lang, '/faq')} class="text-gray-600 hover:text-primary-600 transition-colors">
+            {t('nav.faq')}
+          </a>
+          <a href={getLocalizedUrl(lang, '/contact')} class="text-gray-600 hover:text-primary-600 transition-colors font-medium">
+            {t('nav.contact')}
+          </a>
+
+          <!-- Language Switcher -->
+          <div class="flex items-center space-x-2 ml-4 pl-4 border-l border-warm-200">
+            {Object.entries(languages).map(([locale, name]) => (
+              <a
+                href={getLocalizedUrl(locale, currentRoute)}
+                class={`text-sm px-2 py-1 rounded transition-colors ${
+                  lang === locale
+                    ? 'bg-primary-100 text-primary-700 font-medium'
+                    : 'text-gray-500 hover:text-primary-600'
+                }`}
+              >
+                {locale.toUpperCase()}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden p-2 rounded-lg hover:bg-warm-100 transition-colors"
+          aria-label="Toggle menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4">
+        <div class="flex flex-col space-y-2">
+          <a href={getLocalizedUrl(lang, '/')} class="px-3 py-2 rounded-lg text-gray-600 hover:bg-warm-100 transition-colors">
+            {t('nav.home')}
+          </a>
+          <a href={getLocalizedUrl(lang, '/about')} class="px-3 py-2 rounded-lg text-gray-600 hover:bg-warm-100 transition-colors">
+            {t('nav.about')}
+          </a>
+          <a href={getLocalizedUrl(lang, '/services')} class="px-3 py-2 rounded-lg text-gray-600 hover:bg-warm-100 transition-colors">
+            {t('nav.services')}
+          </a>
+          <a href={getLocalizedUrl(lang, '/faq')} class="px-3 py-2 rounded-lg text-gray-600 hover:bg-warm-100 transition-colors">
+            {t('nav.faq')}
+          </a>
+          <a href={getLocalizedUrl(lang, '/contact')} class="px-3 py-2 rounded-lg text-gray-600 hover:bg-warm-100 transition-colors font-medium">
+            {t('nav.contact')}
+          </a>
+
+          <!-- Mobile Language Switcher -->
+          <div class="flex items-center space-x-2 px-3 pt-2 mt-2 border-t border-warm-200">
+            {Object.entries(languages).map(([locale, name]) => (
+              <a
+                href={getLocalizedUrl(locale, currentRoute)}
+                class={`text-sm px-3 py-1.5 rounded transition-colors ${
+                  lang === locale
+                    ? 'bg-primary-100 text-primary-700 font-medium'
+                    : 'text-gray-500 hover:text-primary-600 hover:bg-warm-100'
+                }`}
+              >
+                {name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-warm-200 mt-auto">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+        <div class="text-center sm:text-left">
+          <p class="text-gray-600">{t('footer.therapist')}</p>
+          <p class="text-sm text-gray-500">
+            © <span id="year"></span> TerapijaRiga.lv. {t('footer.copyright')}
+          </p>
+        </div>
+        <a href={getLocalizedUrl(lang, '/privacy')} class="text-sm text-gray-500 hover:text-primary-600 transition-colors">
+          {t('footer.privacy')}
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+
+    // Set current year
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear().toString();
+    }
+  </script>
+</body>
+</html>
