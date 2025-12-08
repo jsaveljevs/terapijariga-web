@@ -173,15 +173,14 @@ const t = useTranslations(lang);
     </div>
   </article>
 
-  <script>
+  <script is:inline>
     function trackClick(type) {
       if (typeof gtag === 'function') {
-        gtag('event', `${type}_click`, {
+        gtag('event', type + '_click', {
           event_category: 'contact',
           event_label: type
         });
       }
     }
-    window.trackClick = trackClick;
   </script>
 </Layout>

@@ -11,13 +11,15 @@ const t = useTranslations(lang);
   description={t('success.text')}
 >
   <!-- Track contact form conversion -->
-  <script>
-    if (typeof gtag === 'function') {
-      gtag('event', 'contact_form_submit', {
-        event_category: 'conversion',
-        event_label: 'Contact Form Submission'
-      });
-    }
+  <script is:inline>
+    window.addEventListener('load', function() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'contact_form_submit', {
+          event_category: 'conversion',
+          event_label: 'Contact Form Submission'
+        });
+      }
+    });
   </script>
 
   <article class="py-16 sm:py-24">
