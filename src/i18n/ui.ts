@@ -104,7 +104,7 @@ export const ui = {
     'services.practical.title': 'Praktiska informācija',
     'services.practical.duration': 'Sesijas ilgums: 50 minūtes',
     'services.practical.frequency': 'Regularitāte: parasti reizi nedēļā',
-    'services.practical.price': 'Cena: €XX–€YY par sesiju',
+    'services.practical.price': 'Cena: €30–€50 par sesiju',
     'services.practical.payment': 'Maksājums: skaidra nauda vai pārskaitījums',
     'services.practical.cta': 'Lai pieteiktos sesijai vai uzdotu jautājumus, sazinieties ar mani.',
 
@@ -153,7 +153,7 @@ export const ui = {
     'contact.email': 'E-pasts',
     'contact.phone': 'Telefons / WhatsApp',
     'contact.address': 'Adrese',
-    'contact.address.value': 'Rīgas centrs (precīza adrese tiks norādīta)',
+    'contact.address.value': 'Ģertrūdes iela 9, Rīga',
     'contact.response': 'Parasti atbildu 1-2 darba dienu laikā.',
 
     'contact.form.title': 'Rakstiet man',
@@ -163,6 +163,12 @@ export const ui = {
     'contact.form.submit': 'Nosūtīt',
 
     'contact.map.title': 'Kā nokļūt',
+
+    // Success page
+    'success.title': 'Ziņa nosūtīta – TerapijaRiga.lv',
+    'success.h1': 'Paldies par ziņu!',
+    'success.text': 'Jūsu ziņa ir saņemta. Es atbildēšu 1-2 darba dienu laikā.',
+    'success.back': 'Atgriezties sākumlapā',
 
     // Privacy page
     'privacy.title': 'Privātuma politika – TerapijaRiga.lv',
@@ -287,7 +293,7 @@ export const ui = {
     'services.practical.title': 'Практическая информация',
     'services.practical.duration': 'Длительность сессии: 50 минут',
     'services.practical.frequency': 'Регулярность: обычно раз в неделю',
-    'services.practical.price': 'Стоимость: €XX–€YY за сессию',
+    'services.practical.price': 'Стоимость: €30–€50 за сессию',
     'services.practical.payment': 'Оплата: наличными или переводом',
     'services.practical.cta': 'Чтобы записаться на сессию или задать вопросы, свяжитесь со мной.',
 
@@ -336,7 +342,7 @@ export const ui = {
     'contact.email': 'E-mail',
     'contact.phone': 'Телефон / WhatsApp',
     'contact.address': 'Адрес',
-    'contact.address.value': 'Центр Риги (точный адрес будет указан)',
+    'contact.address.value': 'Ģertrūdes iela 9, Рига',
     'contact.response': 'Обычно отвечаю в течение 1-2 рабочих дней.',
 
     'contact.form.title': 'Напишите мне',
@@ -346,6 +352,12 @@ export const ui = {
     'contact.form.submit': 'Отправить',
 
     'contact.map.title': 'Как добраться',
+
+    // Success page
+    'success.title': 'Сообщение отправлено – TerapijaRiga.lv',
+    'success.h1': 'Спасибо за сообщение!',
+    'success.text': 'Ваше сообщение получено. Я отвечу в течение 1-2 рабочих дней.',
+    'success.back': 'Вернуться на главную',
 
     // Privacy page
     'privacy.title': 'Политика конфиденциальности – TerapijaRiga.lv',
@@ -470,7 +482,7 @@ export const ui = {
     'services.practical.title': 'Practical information',
     'services.practical.duration': 'Session length: 50 minutes',
     'services.practical.frequency': 'Frequency: usually once per week',
-    'services.practical.price': 'Price: €XX–€YY per session',
+    'services.practical.price': 'Price: €30–€50 per session',
     'services.practical.payment': 'Payment: cash or bank transfer',
     'services.practical.cta': 'To book a session or ask questions, get in touch.',
 
@@ -519,7 +531,7 @@ export const ui = {
     'contact.email': 'Email',
     'contact.phone': 'Phone / WhatsApp',
     'contact.address': 'Address',
-    'contact.address.value': 'Central Riga (exact address will be provided)',
+    'contact.address.value': 'Ģertrūdes iela 9, Riga',
     'contact.response': 'I usually respond within 1-2 business days.',
 
     'contact.form.title': 'Write to me',
@@ -529,6 +541,12 @@ export const ui = {
     'contact.form.submit': 'Send',
 
     'contact.map.title': 'How to get here',
+
+    // Success page
+    'success.title': 'Message sent – TerapijaRiga.lv',
+    'success.h1': 'Thank you for your message!',
+    'success.text': 'Your message has been received. I will respond within 1-2 business days.',
+    'success.back': 'Return to homepage',
 
     // Privacy page
     'privacy.title': 'Privacy Policy – TerapijaRiga.lv',

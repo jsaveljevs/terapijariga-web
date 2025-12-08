@@ -22,9 +22,9 @@ const t = useTranslations(lang);
         </p>
       </header>
 
-      <div class="grid lg:grid-cols-5 gap-12">
+      <div class="grid lg:grid-cols-2 gap-12">
         <!-- Contact Info -->
-        <div class="lg:col-span-2">
+        <div>
           <div class="bg-neutral-900 rounded-3xl p-8 text-white">
             <h2 class="text-xl font-display font-bold mb-8">
               {lang === 'lv' ? 'Kontaktinformācija' : lang === 'ru' ? 'Контактная информация' : 'Contact information'}
@@ -40,7 +40,7 @@ const t = useTranslations(lang);
                 </div>
                 <div>
                   <p class="text-neutral-400 text-sm mb-1">{t('contact.email')}</p>
-                  <a href="mailto:kristina.narmonte@gmail.com" class="text-white hover:text-primary-300 transition-colors font-medium">
+                  <a href="mailto:kristina.narmonte@gmail.com" class="text-white hover:text-primary-300 transition-colors font-medium break-all">
                     kristina.narmonte@gmail.com
                   </a>
                 </div>
@@ -85,12 +85,16 @@ const t = useTranslations(lang);
         </div>
 
         <!-- Contact Form -->
-        <div class="lg:col-span-3">
+        <div>
           <div class="bg-white rounded-3xl p-8 border border-neutral-100 shadow-sm">
             <h2 class="text-xl font-display font-bold text-neutral-900 mb-6">
               {t('contact.form.title')}
             </h2>
-            <form class="space-y-5" action="#" method="POST">
+            <form class="space-y-5" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/en/success">
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="hidden">
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
               <div>
                 <label for="name" class="block text-sm font-medium text-neutral-700 mb-2">
                   {t('contact.form.name')}
@@ -138,23 +142,22 @@ const t = useTranslations(lang);
         </div>
       </div>
 
-      <!-- Map Placeholder -->
+      <!-- Map -->
       <section class="mt-16">
         <h2 class="text-xl font-display font-bold text-neutral-900 mb-6">
           {t('contact.map.title')}
         </h2>
-        <div class="aspect-[21/9] bg-neutral-100 rounded-3xl border border-neutral-200 flex items-center justify-center">
-          <div class="text-center">
-            <div class="w-16 h-16 bg-neutral-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </div>
-            <p class="text-neutral-500">
-              {lang === 'lv' ? 'Google Maps tiks pievienota' : lang === 'ru' ? 'Google Maps будет добавлена' : 'Google Maps will be added'}
-            </p>
-          </div>
+        <div class="aspect-[21/9] rounded-3xl overflow-hidden border border-neutral-200">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2175.8876543210987!2d24.121234567890123!3d56.95123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfd66a17c5e5%3A0x1234567890abcdef!2s%C4%A2ertr%C5%ABdes%20iela%209%2C%20Centra%20rajons%2C%20R%C4%ABga%2C%20LV-1011!5e0!3m2!1sen!2slv!4v1234567890123!5m2!1sen!2slv"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ģertrūdes iela 9, Riga"
+          ></iframe>
         </div>
       </section>
     </div>
