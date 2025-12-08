@@ -1,0 +1,72 @@
+---
+interface Props {
+  class?: string;
+  alt?: string;
+}
+
+const { class: className = '', alt = 'Kristīna – Gestalt psychotherapist in Riga' } = Astro.props;
+
+const images = [
+  '/images/portrait_kn1.jpeg',
+  '/images/portrait_kn2.jpeg',
+];
+---
+
+<div class={`rotating-portrait-container ${className}`} data-images={JSON.stringify(images)}>
+  <img
+    src={images[0]}
+    alt={alt}
+    class="rotating-portrait w-full h-full object-cover"
+    loading="eager"
+  />
+</div>
+
+<script>
+  class RotatingPortrait {
+    private container: HTMLElement;
+    private img: HTMLImageElement;
+    private images: string[];
+    private currentIndex: number = 0;
+    private interval: number = 15000;
+
+    constructor(container: HTMLElement) {
+      this.container = container;
+      this.img = container.querySelector('.rotating-portrait') as HTMLImageElement;
+      this.images = JSON.parse(container.dataset.images || '[]');
+
+      if (this.images.length > 1) {
+        this.preloadImages();
+        this.startRotation();
+      }
+    }
+
+    private preloadImages(): void {
+      this.images.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    }
+
+    private startRotation(): void {
+      setInterval(() => {
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+        this.img.style.opacity = '0';
+
+        setTimeout(() => {
+          this.img.src = this.images[this.currentIndex];
+          this.img.style.opacity = '1';
+        }, 300);
+      }, this.interval);
+    }
+  }
+
+  document.querySelectorAll('.rotating-portrait-container').forEach((container) => {
+    new RotatingPortrait(container as HTMLElement);
+  });
+</script>
+
+<style>
+  .rotating-portrait {
+    transition: opacity 0.3s ease-in-out;
+  }
+</style>

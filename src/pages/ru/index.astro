@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RotatingPortrait from '../../components/RotatingPortrait.astro';
 import { useTranslations } from '../../i18n/ui';
 
 const lang = 'ru';
@@ -59,9 +60,7 @@ const structuredData = {
         <div class="order-1 lg:order-2 flex justify-center">
           <div class="relative">
             <div class="absolute inset-0 bg-gradient-to-br from-primary-400 to-accent-400 rounded-3xl rotate-6 opacity-20"></div>
-            <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-              <img src="/images/portrait.jpg" alt="Кристина – Гештальт-психотерапевт в Риге" class="w-full h-full object-cover rounded-3xl shadow-2xl" onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22><rect fill=%22%23e5e5e5%22 width=%22400%22 height=%22400%22 rx=%2224%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23737373%22 font-size=%2220%22 font-family=%22system-ui%22>Photo</text></svg>'" />
-            </div>
+            <RotatingPortrait alt="Кристина – Гештальт-психотерапевт в Риге" class="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl shadow-2xl overflow-hidden" />
           </div>
         </div>
       </div>

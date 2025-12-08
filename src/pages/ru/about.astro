@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RotatingPortrait from '../../components/RotatingPortrait.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/ui';
 
 const lang = getLangFromUrl(Astro.url);
@@ -22,14 +23,7 @@ function getLocalizedUrl(locale: string, route: string): string {
       <!-- Header -->
       <header class="mb-16">
         <div class="flex flex-col md:flex-row items-start gap-8">
-          <div class="w-40 h-40 flex-shrink-0">
-            <img
-              src="/images/portrait.jpg"
-              alt="Kristīna"
-              class="w-full h-full object-cover rounded-3xl shadow-lg"
-              onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 160 160%22><rect fill=%22%23e5e5e5%22 width=%22160%22 height=%22160%22 rx=%2224%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23737373%22 font-size=%2214%22 font-family=%22system-ui%22>Photo</text></svg>'"
-            />
-          </div>
+          <RotatingPortrait alt="Кристина" class="w-40 h-40 flex-shrink-0 rounded-3xl shadow-lg overflow-hidden" />
           <div>
             <h1 class="text-4xl sm:text-5xl font-display font-bold text-neutral-900 mb-6">
               {t('about.h1')}
