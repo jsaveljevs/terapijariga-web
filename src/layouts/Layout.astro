@@ -10,7 +10,7 @@ interface Props {
   structuredData?: object;
 }
 
-const { title, description, canonicalUrl, ogImage = '/images/og-default.jpg', structuredData } = Astro.props;
+const { title, description, canonicalUrl, ogImage = '/images/og_image.jpeg', structuredData } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -32,6 +32,15 @@ function getLocalizedUrl(locale: string, route: string): string {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3KSS1PHHQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z3KSS1PHHQ');
+  </script>
   <meta name="description" content={description} />
 
   <title>{title}</title>

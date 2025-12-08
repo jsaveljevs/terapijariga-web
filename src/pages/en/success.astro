@@ -10,6 +10,16 @@ const t = useTranslations(lang);
   title={t('success.title')}
   description={t('success.text')}
 >
+  <!-- Track contact form conversion -->
+  <script>
+    if (typeof gtag === 'function') {
+      gtag('event', 'contact_form_submit', {
+        event_category: 'conversion',
+        event_label: 'Contact Form Submission'
+      });
+    }
+  </script>
+
   <article class="py-16 sm:py-24">
     <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="mb-8">
