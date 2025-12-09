@@ -79,8 +79,28 @@ function getLocalizedUrl(locale: string, route: string): string {
         ))}
       </div>
 
+      <!-- Related Links -->
+      <div class="mt-12 grid sm:grid-cols-2 gap-4">
+        <a href={getLocalizedUrl(lang, '/services')} class="group bg-white rounded-2xl p-6 border border-neutral-100 hover:border-primary-200 hover:shadow-md transition-all">
+          <h3 class="font-semibold text-neutral-900 mb-2 group-hover:text-primary-600 transition-colors">
+            {t('nav.services')}
+          </h3>
+          <p class="text-sm text-neutral-500">
+            {lang === 'lv' ? 'Individuālā un tiešsaistes terapija' : lang === 'ru' ? 'Индивидуальная и онлайн-терапия' : 'Individual and online therapy'}
+          </p>
+        </a>
+        <a href={getLocalizedUrl(lang, '/about')} class="group bg-white rounded-2xl p-6 border border-neutral-100 hover:border-primary-200 hover:shadow-md transition-all">
+          <h3 class="font-semibold text-neutral-900 mb-2 group-hover:text-primary-600 transition-colors">
+            {t('nav.about')}
+          </h3>
+          <p class="text-sm text-neutral-500">
+            {lang === 'lv' ? 'Par Kristīnu un geštalta pieeju' : lang === 'ru' ? 'О Кристине и гештальт-подходе' : 'About Kristina and the Gestalt approach'}
+          </p>
+        </a>
+      </div>
+
       <!-- CTA -->
-      <div class="mt-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-3xl p-8 sm:p-10 text-center">
+      <div class="mt-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-3xl p-8 sm:p-10 text-center">
         <p class="text-white text-lg mb-6">
           {lang === 'lv' ? 'Vai jums ir citi jautājumi?' : lang === 'ru' ? 'Есть другие вопросы?' : 'Have other questions?'}
         </p>

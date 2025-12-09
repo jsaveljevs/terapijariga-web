@@ -100,17 +100,33 @@ function getLocalizedUrl(locale: string, route: string): string {
         </div>
       </section>
 
+      <!-- Related Links -->
+      <section class="mb-12">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href={getLocalizedUrl(lang, '/services')} class="group bg-white rounded-2xl p-6 border border-neutral-100 hover:border-primary-200 hover:shadow-md transition-all">
+            <h3 class="font-semibold text-neutral-900 mb-2 group-hover:text-primary-600 transition-colors">
+              {t('nav.services')}
+            </h3>
+            <p class="text-sm text-neutral-500">
+              {lang === 'lv' ? 'Individuālā un tiešsaistes terapija' : lang === 'ru' ? 'Индивидуальная и онлайн-терапия' : 'Individual and online therapy'}
+            </p>
+          </a>
+          <a href={getLocalizedUrl(lang, '/faq')} class="group bg-white rounded-2xl p-6 border border-neutral-100 hover:border-primary-200 hover:shadow-md transition-all">
+            <h3 class="font-semibold text-neutral-900 mb-2 group-hover:text-primary-600 transition-colors">
+              {t('nav.faq')}
+            </h3>
+            <p class="text-sm text-neutral-500">
+              {lang === 'lv' ? 'Kas ir geštalta terapija?' : lang === 'ru' ? 'Что такое гештальт-терапия?' : 'What is Gestalt therapy?'}
+            </p>
+          </a>
+        </div>
+      </section>
+
       <!-- CTA -->
       <div class="flex flex-col sm:flex-row gap-4">
         <a
-          href={getLocalizedUrl(lang, '/services')}
-          class="inline-flex items-center justify-center px-8 py-4 bg-neutral-900 text-white font-medium rounded-2xl hover:bg-neutral-800 transition-all"
-        >
-          {t('home.cta.services')}
-        </a>
-        <a
           href={getLocalizedUrl(lang, '/contact')}
-          class="inline-flex items-center justify-center px-8 py-4 bg-white text-neutral-700 font-medium rounded-2xl border border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50 transition-all"
+          class="inline-flex items-center justify-center px-8 py-4 bg-neutral-900 text-white font-medium rounded-2xl hover:bg-neutral-800 transition-all"
         >
           {t('home.cta.book')}
         </a>
