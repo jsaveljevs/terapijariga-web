@@ -8,9 +8,10 @@ interface Props {
   canonicalUrl?: string;
   ogImage?: string;
   structuredData?: object;
+  noindex?: boolean;
 }
 
-const { title, description, canonicalUrl, ogImage = '/images/og_image.jpeg', structuredData } = Astro.props;
+const { title, description, canonicalUrl, ogImage = '/images/og_image.jpeg', structuredData, noindex = false } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -43,6 +44,7 @@ function getLocalizedUrl(locale: string, route: string): string {
     gtag('js', new Date());
     gtag('config', 'G-XSHH30KW65');
   </script>
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
   <meta name="description" content={description} />
 
   <title>{title}</title>

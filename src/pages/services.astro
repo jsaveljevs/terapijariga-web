@@ -11,11 +11,76 @@ function getLocalizedUrl(locale: string, route: string): string {
   }
   return route === '/' ? `/${locale}` : `/${locale}${route}`;
 }
+
+const siteUrl = 'https://terapijariga.lv';
+const currentUrl = `${siteUrl}/services`;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": t('nav.home'),
+          "item": siteUrl
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": t('nav.services'),
+          "item": currentUrl
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://terapijariga.lv/#business",
+      "name": "TerapijaRiga – Kristīna Narmonte",
+      "description": t('services.description'),
+      "url": siteUrl,
+      "telephone": "+371 20 584 384",
+      "email": "kristina.narmonte@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ģertrūdes iela 9",
+        "addressLocality": "Riga",
+        "addressCountry": "LV"
+      },
+      "priceRange": "€€",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": lang === 'lv' ? 'Psihoterapijas pakalpojumi' : lang === 'ru' ? 'Услуги психотерапии' : 'Psychotherapy Services',
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": t('services.individual.title'),
+              "description": lang === 'lv' ? 'Individuālā geštalta terapija pieaugušajiem' : lang === 'ru' ? 'Индивидуальная гештальт-терапия для взрослых' : 'Individual Gestalt therapy for adults'
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": t('services.online.title'),
+              "description": lang === 'lv' ? 'Tiešsaistes terapijas sesijas' : lang === 'ru' ? 'Онлайн-сессии терапии' : 'Online therapy sessions'
+            }
+          }
+        ]
+      }
+    }
+  ]
+};
 ---
 
 <Layout
   title={t('services.title')}
   description={t('services.description')}
+  structuredData={structuredData}
 >
   <article class="py-16 sm:py-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
