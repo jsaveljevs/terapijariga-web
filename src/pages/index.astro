@@ -13,66 +13,98 @@ function getLocalizedUrl(locale: string, route: string): string {
   return route === '/' ? `/${locale}` : `/${locale}${route}`;
 }
 
+// Person schema for Kristīna
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://terapijariga.lv/#person",
+  "name": "Kristīna Narmonte",
+  "givenName": "Kristīna",
+  "familyName": "Narmonte",
+  "jobTitle": "Gestalt Psychotherapist",
+  "description": "Certified Gestalt psychotherapist providing individual therapy for adults in Riga, Latvia. Specializing in anxiety, burnout, relationships, and trauma.",
+  "image": "https://terapijariga.lv/images/portrait_kn1.jpeg",
+  "url": "https://terapijariga.lv/",
+  "email": "kristina.narmonte@gmail.com",
+  "telephone": "+371 20 584 384",
+  "knowsLanguage": ["lv", "ru", "en"],
+  "worksFor": {
+    "@type": "MedicalBusiness",
+    "@id": "https://terapijariga.lv/#business"
+  },
+  "sameAs": [
+    "https://www.instagram.com/kristina.narmonte/"
+  ]
+};
+
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  "@id": "https://terapijariga.lv/#business",
-  "name": "Gestalt Psychotherapist in Riga – Kristīna",
-  "alternateName": "TerapijaRiga.lv",
-  "url": "https://terapijariga.lv/",
-  "telephone": "+371 20 584 384",
-  "email": "kristina.narmonte@gmail.com",
-  "description": "Gestalt psychotherapy in Riga for adults. Help with anxiety, burnout, relationships, self-worth and trauma. In-person and online sessions in Latvian, Russian and English.",
-  "image": "https://terapijariga.lv/images/portrait_kn1.jpeg",
-  "priceRange": "€€",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Riga",
-    "addressRegion": "Riga",
-    "addressCountry": "LV"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 56.9496,
-    "longitude": 24.1052
-  },
-  "openingHoursSpecification": [
+  "@graph": [
+    personSchema,
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "19:00"
-    }
-  ],
-  "availableLanguage": [
-    { "@type": "Language", "name": "Latvian", "alternateName": "lv" },
-    { "@type": "Language", "name": "Russian", "alternateName": "ru" },
-    { "@type": "Language", "name": "English", "alternateName": "en" }
-  ],
-  "medicalSpecialty": "Psychiatric",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Psychotherapy Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Individual Psychotherapy",
-          "description": "One-on-one Gestalt therapy sessions for adults"
-        }
+      "@type": "MedicalBusiness",
+      "@id": "https://terapijariga.lv/#business",
+      "name": "Gestalt Psychotherapist in Riga – Kristīna",
+      "alternateName": "TerapijaRiga.lv",
+      "url": "https://terapijariga.lv/",
+      "telephone": "+371 20 584 384",
+      "email": "kristina.narmonte@gmail.com",
+      "description": "Gestalt psychotherapy in Riga for adults. Help with anxiety, burnout, relationships, self-worth and trauma. In-person and online sessions in Latvian, Russian and English.",
+      "image": "https://terapijariga.lv/images/portrait_kn1.jpeg",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Riga",
+        "addressRegion": "Riga",
+        "addressCountry": "LV"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Online Psychotherapy",
-          "description": "Video call therapy sessions"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 56.9496,
+        "longitude": 24.1052
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "19:00"
         }
-      }
-    ]
-  },
-  "sameAs": []
+      ],
+      "availableLanguage": [
+        { "@type": "Language", "name": "Latvian", "alternateName": "lv" },
+        { "@type": "Language", "name": "Russian", "alternateName": "ru" },
+        { "@type": "Language", "name": "English", "alternateName": "en" }
+      ],
+      "medicalSpecialty": "Psychiatric",
+      "founder": { "@id": "https://terapijariga.lv/#person" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Psychotherapy Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Individual Psychotherapy",
+              "description": "One-on-one Gestalt therapy sessions for adults"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Online Psychotherapy",
+              "description": "Video call therapy sessions"
+            }
+          }
+        ]
+      },
+      "sameAs": [
+        "https://www.instagram.com/kristina.narmonte/"
+      ]
+    }
+  ]
 };
 ---
 

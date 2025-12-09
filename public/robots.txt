@@ -1,4 +1,13 @@
+# TerapijaRiga.lv - Gestalt Psychotherapy in Riga
+# https://terapijariga.lv
+
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
+# Disallow admin/system paths (if any)
+Disallow: /api/
+Disallow: /_astro/
+
+# Sitemap location
 Sitemap: https://terapijariga.lv/sitemap.xml
